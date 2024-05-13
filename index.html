@@ -76,18 +76,32 @@
             <i class="fa-solid fa-circle-xmark"></i>
           </div>
           <div class="modal-body">
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, quam?
-              Quas accusantium id cupiditate iste veritatis repudiandae odio dolore
-              voluptas. Eum, deserunt quod. Sit similique laudantium assumenda
-              repellat vel necessitatibus.
-            </p>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius alias
-              voluptate doloremque, totam inventore autem quis non error! Earum
-              ullam fuga, officiis voluptates pariatur unde et adipisci ducimus non
-              obcaecati.
-            </p>
+            <div class="calendario">
+              <header>
+               <h3></h3>
+                  <nav>
+                     <button id="anterior"></button>
+                     <button id="proximo"></button>
+                  </nav>
+              </header>
+      
+              <section>
+                  <ul class="dias">
+                      <li>Dom</li>
+                      <li>Seg</li>
+                      <li>Ter</li>
+                      <li>Quar</li>
+                      <li>Quin</li>
+                      <li>Sex</li>
+                      <li>Sab</li>
+                  </ul>
+                  <ul class="datas"></ul>
+              </section>
+          </div>
+      
+          <form id="searchForm" action="/search" method="POST">
+              <button type="submit" id="btn-pesquisar">Pesquisar</button>
+          </form>
           </div>
         </div>
       </div>
@@ -137,11 +151,19 @@
       <<div id="new-fade" class="hide"></div>
       <div id="new-modal" class="hide">
         <div class="modal-header">
-          <h2 style="color: #49DBC1">Novo Modal</h2>
+          <h2 style="color: #49DBC1">Adicionar nova tarefa</h2>
           <i class="fa-solid fa-circle-xmark"></i>
         </div>
         <div class="modal-body">
           <!-- Conteúdo do novo modal aqui -->
+          <input type="checkbox" name="categorias" id="categorias">
+          <input type="date" id="selectedDate" name="selectedDate">
+          <input type="time" name="horas" id="horas">
+
+
+
+          
+          
         </div>
       </div>
 

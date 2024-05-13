@@ -253,7 +253,7 @@
    align-items: center;
    border-bottom: 1px solid var(--text-primary);
    margin-bottom: 1rem;
-   padding-bottom: 1rem;
+   padding-bottom: 1rem;  
  }
 
  .modal-header i{
@@ -348,6 +348,145 @@
  #modal.hide {
    top: 0;
  }
+
+
+ /* Calendário */
+ .calendario{
+  margin: auto;
+  width: 380px;
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border-radius: 13px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.calendario header{
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.calendario ul{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  
+}
+
+.calendario ul li{
+  width: calc(100% / 7 );
+  margin-top: 25px;
+  position: relative;
+  z-index: 2;
+}
+
+#anterior, #proximo{
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: 50%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  margin: auto;
+}
+
+#anterior::before, #proximo::before{
+  content: '';
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-style: solid;
+  border-width: 0.25em 0.25em 0 0;
+  border-color: var(--text-primary);
+  
+
+}
+
+#anterior::before{
+  transform: translate(-50%, -50%) rotate(-135deg);
+
+}
+
+#proximo::before{
+  transform: translate(-50%, -50%) rotate(45deg);
+
+}
+
+#anterior:hover::before, #proximo:hover::before{
+  border-color: var(--special);
+  transition: 0.3s;
+
+}
+
+.dias{
+  font-weight: 600;
+  color: var(--text-primary);
+
+}
+
+.datas li{
+  color: var(--text-secondary);
+}
+
+
+.datas li.today{
+  color: var(--text-primary);
+
+
+}
+
+.datas li.today::before{
+  content: '';
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--special);
+  border-radius: 50%;
+  z-index: -1;
+
+}
+
+.datas li.inactive{
+  color: var(--text-tertiary);
+  
+}
+  #searchForm{
+    text-align: center;
+  }
+
+  #btn-pesquisar{
+    border-radius: 1rem;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    height: 3rem;
+    width: 9rem;
+    font-family: 'Poppins';
+    background-color: var(--bg-secondary);
+    color: var(--text-secondary);
+    border-color: var(--text-secondary);
+    text-align: center;
+  }
+
+#btn-pesquisar:hover{
+  background-color: var(--special);
+  transition: 0.7s;
+  border-color: var(--special);
+  
+}
+
+
+
+
 
  /* Segundo modal */
  #new-modal {
