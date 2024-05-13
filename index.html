@@ -1,0 +1,155 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tentativa</title>
+  <script defer src="js/script.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <ul class="navbar-nav">
+      <li class="logo">
+        <a href="#" class="nav-link">
+          <span class="link-text logo-text">Projeto X</span>
+
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="fa-solid fa-location-dot"></i>
+          <span class="link-text">Consultar</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="fa-solid fa-person-running"></i>
+          <span class="link-text">Exercícios</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="fa-regular fa-file"></i>
+          <span class="link-text">Tarefas</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="fa-solid fa-calculator"></i>
+          <span class="link-text">Calculadora IMC</span>
+        </a>
+      </li>
+
+      <li class="nav-item" id="themeButton">
+        <a href="#" class="nav-link">
+          <i class="fa-solid fa-circle-half-stroke"></i>
+          <span class="link-text">Temas</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+
+  <main id="container">
+    <h1>Suas tarefas</h1>
+
+
+    <div id="selection">
+      <div class="input-box">
+        <div class="input-field">
+          <i class="fa-solid fa-calendar-days open-modal-button"></i> <!-- Movido o ícone de calendário aqui -->
+          <input type="text" id="search" step="0.01" name="search" autocomplete="off" plarequired
+            placeholder="Digite uma tarefa aqui">
+          <span></span>
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+
+        <div id="fade" class="hide"></div>
+        <div id="modal" class="hide">
+          <div class="modal-header">
+            <h2 style="color: #49DBC1">Calendário</h2>
+            <i class="fa-solid fa-circle-xmark"></i>
+          </div>
+          <div class="modal-body">
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, quam?
+              Quas accusantium id cupiditate iste veritatis repudiandae odio dolore
+              voluptas. Eum, deserunt quod. Sit similique laudantium assumenda
+              repellat vel necessitatibus.
+            </p>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius alias
+              voluptate doloremque, totam inventore autem quis non error! Earum
+              ullam fuga, officiis voluptates pariatur unde et adipisci ducimus non
+              obcaecati.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="buttons">
+      <div class="button">
+        <i class="fa-solid fa-location-dot"></i>
+        <label for="button-label">Teste</label>
+      </div>
+      <div class="button">
+        <i class="fa-solid fa-location-dot"></i>
+        <label for="button-label">Teste</label>
+      </div>
+      <div class="button">
+        <i class="fa-solid fa-location-dot"></i>
+        <label for="button-label">Teste</label>
+      </div>
+      <div class="button">
+        <i class="fa-solid fa-location-dot"></i>
+        <label for="button-label">Teste</label>
+      </div>
+      <div class="button">
+        <i class="fa-solid fa-location-dot"></i>
+        <label for="button-label">Teste</label>
+      </div>
+    </div>
+
+
+
+    </div>
+
+    
+
+    <div id="task-space">
+      <div class="input-task">
+          <input type="text" id="task" step="0.01" name="task" readonly
+            placeholder="Sua tarefa">
+          <span></span>
+          <i class="fa-solid fa-pencil"></i>
+          <i class="fa-solid fa-circle-xmark"></i>
+      </div>
+
+    
+      <i class="fa-solid fa-circle-plus" id="openNewModalButton"></i>
+    
+      <<div id="new-fade" class="hide"></div>
+      <div id="new-modal" class="hide">
+        <div class="modal-header">
+          <h2 style="color: #49DBC1">Novo Modal</h2>
+          <i class="fa-solid fa-circle-xmark"></i>
+        </div>
+        <div class="modal-body">
+          <!-- Conteúdo do novo modal aqui -->
+        </div>
+      </div>
+
+    </div>
+
+    <div id="task-block">
+
+    </div>
+  </main>
+  <script src="script/script.js"></script>
+</body>
