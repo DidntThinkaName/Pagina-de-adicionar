@@ -76,52 +76,37 @@
             <i class="fa-solid fa-circle-xmark"></i>
           </div>
           <div class="modal-body">
-<<<<<<< HEAD
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, quam?
-              Quas accusantium id cupiditate iste veritatis repudiandae odio dolore
-              voluptas. Eum, deserunt quod. Sit similique laudantium assumenda
-              repellat vel necessitatibus.
-            </p>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius alias
-              voluptate doloremque, totam inventore autem quis non error! Earum
-              ullam fuga, officiis voluptates pariatur unde et adipisci ducimus non
-              obcaecati.
-            </p>
-=======
             <div class="calendario">
               <header>
-               <h3></h3>
-                  <nav>
-                     <button id="anterior"></button>
-                     <button id="proximo"></button>
-                  </nav>
+                <h3></h3>
+                <nav>
+                  <button id="anterior"></button>
+                  <button id="proximo"></button>
+                </nav>
               </header>
-      
+
               <section>
-                  <ul class="dias">
-                      <li>Dom</li>
-                      <li>Seg</li>
-                      <li>Ter</li>
-                      <li>Quar</li>
-                      <li>Quin</li>
-                      <li>Sex</li>
-                      <li>Sab</li>
-                  </ul>
-                  <ul class="datas"></ul>
+                <ul class="dias">
+                  <li>Dom</li>
+                  <li>Seg</li>
+                  <li>Ter</li>
+                  <li>Quar</li>
+                  <li>Quin</li>
+                  <li>Sex</li>
+                  <li>Sab</li>
+                </ul>
+                <ul class="datas"></ul>
               </section>
-          </div>
-      
-          <form id="searchForm" action="/search" method="POST">
+            </div>
+
+            <form id="searchForm" action="/search" method="POST">
               <button type="submit" id="btn-pesquisar">Pesquisar</button>
-          </form>
->>>>>>> 2891fa32ddd964ce0152f52c41550d1e8b3028fe
+            </form>
           </div>
         </div>
       </div>
     </div>
-    
+
     <div id="buttons">
       <div class="button">
         <i class="fa-solid fa-location-dot"></i>
@@ -149,45 +134,82 @@
 
     </div>
 
-    
+
 
     <div id="task-space">
       <div class="input-task">
-          <input type="text" id="task" step="0.01" name="task" readonly
-            placeholder="Sua tarefa">
-          <span></span>
-          <i class="fa-solid fa-pencil"></i>
-          <i class="fa-solid fa-circle-xmark"></i>
+        <input type="text" id="task" step="0.01" name="task" readonly placeholder="Sua tarefa">
+        <span></span>
+        <i class="fa-solid fa-pencil"></i>
+        <i class="fa-solid fa-circle-xmark"></i>
       </div>
 
-    
+
       <i class="fa-solid fa-circle-plus" id="openNewModalButton"></i>
-    
-      <<div id="new-fade" class="hide"></div>
-      <div id="new-modal" class="hide">
-        <div class="modal-header">
-<<<<<<< HEAD
-          <h2 style="color: #49DBC1">Novo Modal</h2>
-=======
-          <h2 style="color: #49DBC1">Adicionar nova tarefa</h2>
->>>>>>> 2891fa32ddd964ce0152f52c41550d1e8b3028fe
-          <i class="fa-solid fa-circle-xmark"></i>
-        </div>
-        <div class="modal-body">
-          <!-- Conteúdo do novo modal aqui -->
-<<<<<<< HEAD
-=======
-          <input type="checkbox" name="categorias" id="categorias">
-          <input type="date" id="selectedDate" name="selectedDate">
-          <input type="time" name="horas" id="horas">
 
-
-
-          
-          
->>>>>>> 2891fa32ddd964ce0152f52c41550d1e8b3028fe
-        </div>
+      <div id="new-fade" class="hide">
+    </div>
+    <div id="new-modal" class="hide">
+      <div class="modal-header">
+        <h2 style="color: #49DBC1">Adicionar nova tarefa</h2>
+        <i class="fa-solid fa-circle-xmark"></i>
       </div>
+      <div class="modal-body">
+        <!-- Conteúdo do novo modal aqui -->
+        <div class="new-task">
+          <h3>Adicionar nova tarefa</h3>
+          <input type="text" id="task" step="0.01" name="task" placeholder="Sua tarefa">
+        </div>
+
+
+        <div class="task-category">
+          <h3>Selecione a categoria</h3>
+          <form method="post" action="opcao-de-categorias">
+            <select name="categoria" id="categoria">
+              <option value="selecionar">Selecione uma opção</option>
+              <option value="Trabalho">Trabalho</option>
+              <option value="Lazer">Lazer</option>
+              <option value="Exerciícios">Exercícios</option>
+              <option value="Dieta">Dieta</option>
+              <option value="Estudos">Estudos</option>
+            </select>
+  
+  
+            
+          </form>
+        </div>
+
+        
+       <div class="task-date">
+        <h3>Data da tarefa</h3>
+        <input type="date" id="selectedDate" name="selectedDate">
+        <input type="time" name="horas" id="horas">
+       </div>
+
+       <div class="task-notifications">
+        <h5>Ativar notificações?</h5>
+        <input type="checkbox" id="checkbox">
+        <i class="fa-solid fa-bell"></i>
+       </div>
+
+
+       <div class="task-notes">
+        <h5>Anotaçoes extras</h5>
+        <input type="text" id="notes">
+       </div>
+      
+       <div class="modal-buttons">
+        <input type="submit" value="Enviar"/>
+        <input type="reset" value="Cancelar"/>
+       </div>
+        
+
+
+
+
+
+      </div>
+    </div>
 
     </div>
 

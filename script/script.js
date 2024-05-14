@@ -80,9 +80,6 @@ const closeIcon = document.querySelector('.input-task i.fa-circle-xmark');
 const taskField = document.querySelector('.input-task');
 closeIcon.addEventListener('click', function() {
   taskField.style.display = 'none';
-<<<<<<< HEAD
-});
-=======
 });
 
 
@@ -162,4 +159,3 @@ nav.forEach(nav => {
 
 renderCalendar(); 
 
->>>>>>> 2891fa32ddd964ce0152f52c41550d1e8b3028fe
