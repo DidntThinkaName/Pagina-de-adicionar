@@ -1,0 +1,1006 @@
+ /* Configurações iniciais */
+ @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+ :root {
+   font-size: 16px;
+   --text-primary: #b6b6b6;
+   --text-secondary: #ececec;
+   --bg-primary: #23232e;
+   --bg-secondary: #141418;
+   --bg-third: var(#000000);
+
+   --transition-speed: 600ms;
+ }
+
+ * {
+   font-family: 'Poppins';
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+
+ }
+
+ body {
+   color: black;
+   background-color: white;
+   margin: 0;
+   padding: 0;
+   display: flex;
+   width: 100%;
+   height: 100vh;
+   background-color: var(--bg-secondary);
+ }
+
+ body::-webkit-scrollbar {
+   width: 0.25rem;
+ }
+
+ body::-webkit-scrollbar-track {
+   background: #1e1e24;
+ }
+
+ body::-webkit-scrollbar-thumb {
+   background: var(--special);
+ }
+
+ main {
+   margin-left: 5rem;
+   padding: 1rem;
+   flex-grow: 1;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: center;
+ }
+
+ /* Código da NavBar */
+ .navbar {
+   position: fixed;
+   background-color: var(--bg-primary);
+   transition: width 600ms ease;
+   overflow: scroll;
+
+
+ }
+
+ .navbar-nav {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   height: 100%;
+
+ }
+
+ .nav-item {
+   width: 100%;
+ }
+
+ .nav-item:last-child {
+   margin-top: auto;
+ }
+
+ .nav-link {
+   display: flex;
+   align-items: center;
+   height: 5rem;
+   color: var(--text-primary);
+   text-decoration: none;
+   background-color: var(--bg-primary);
+   transition: var(--transition-speed);
+ }
+
+ .nav-link:hover {
+   filter: grayscale(0%);
+   background: var(--special);
+   color: var(--text-secondary);
+ }
+
+ .link-text {
+   display: none;
+   margin-left: 1rem;
+ }
+
+ .navbar::-webkit-scrollbar {
+   display: none;
+ }
+
+ .nav-link i {
+   font-size: 175%;
+   margin-left: 1.5rem;
+ }
+
+
+
+ .fa-primary,
+ .fa-secondary {
+   transition: var(--transition-speed);
+ }
+
+ .logo {
+   font-weight: bold;
+   text-transform: uppercase;
+   margin-bottom: 1rem;
+   text-align: center;
+   color: var(--text-secondary);
+   background: var(--bg-secondary);
+   font-size: 1.5rem;
+   letter-spacing: 0.3ch;
+   width: 100%;
+ }
+
+ .logo-text {
+   display: inline;
+   position: absolute;
+   left: -999px;
+   transition: var(--transition-speed);
+ }
+
+ /* Conteúdo da página */
+ #container {
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+   /* Alterado para min-height para garantir que a altura da viewport seja coberta */
+
+ }
+
+
+ #container h1 {
+   font-size: 3rem;
+   margin-top: 5rem;
+   margin-bottom: 5rem;
+   vertical-align: super;
+   text-align: center;
+   justify-content: center;
+   color: var(--text-secondary);
+
+ }
+
+
+ #buttons {
+   display: flex;
+   justify-content: center;
+   /* Horizontally center the buttons */
+   align-items: center;
+ }
+
+ .button {
+   background-color: var(--special);
+   width: 8rem;
+   height: 8rem;
+   margin: 2rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   border-radius: 10%;
+   font-size: 2rem;
+   border: 2px solid var(--text-tertiary);
+   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+
+ }
+
+ .button:hover {
+   background-color: #3aaa96;
+   transition: 0.3s;
+ }
+
+ /* Botões de seleção */
+
+ .button i {
+   color: var(--bg-primary);
+   /* position: fixed; */
+   margin: auto;
+
+ }
+
+ .button label {
+   color: var(--bg-primary);
+   font-size: 1.2rem;
+   font-family: 'poppins';
+
+
+ }
+
+ /* Barra de pesquisa */
+ #selection {
+   display: flex;
+   justify-content: center;
+
+ }
+
+ #open-modal {
+   background-color: #007bff;
+ }
+
+
+ #fade {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.6);
+   z-index: 5;
+ }
+
+ #modal {
+   position: fixed;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   width: 500px;
+   max-width: 90%;
+   background-color: var(--bg-primary);
+   padding: 1.2rem;
+   border-radius: 0.5rem;
+   z-index: 10;
+ }
+
+ #fade,
+ #modal {
+   transition: 0.5s;
+   opacity: 1;
+   pointer-events: all;
+ }
+
+ .modal-header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   border-bottom: 1px solid var(--text-primary);
+   margin-bottom: 1rem;
+   padding-bottom: 1rem;
+ }
+
+ .modal-header i {
+   font-size: 1.5rem;
+   color: var(--text-primary);
+ }
+
+ .modal-header i:hover {
+   color: var(--special);
+ }
+
+ .modal-body p {
+   margin-bottom: 1rem;
+   color: var(--text-primary);
+ }
+
+ #modal.hide,
+ #fade.hide {
+   opacity: 0;
+   pointer-events: none;
+ }
+
+ #modal.hide {
+   top: 0;
+ }
+
+
+ #open-modal {
+   background-color: #007bff;
+ }
+
+
+ #fade {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.6);
+   z-index: 5;
+ }
+
+ #modal {
+   position: fixed;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   width: 500px;
+   max-width: 90%;
+   background-color: var(--bg-primary);
+   padding: 1.2rem;
+   border-radius: 0.5rem;
+   z-index: 10;
+ }
+
+ #fade,
+ #modal {
+   transition: 0.5s;
+   opacity: 1;
+   pointer-events: all;
+ }
+
+ .modal-header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   border-bottom: 1px solid var(--text-primary);
+   margin-bottom: 1rem;
+   padding-bottom: 1rem;
+ }
+
+ .modal-header i {
+   font-size: 1.5rem;
+   color: var(--text-primary);
+ }
+
+ .modal-header i:hover {
+   color: var(--special);
+ }
+
+ .modal-body p {
+   margin-bottom: 1rem;
+   color: var(--text-primary);
+ }
+
+ #modal.hide,
+ #fade.hide {
+   opacity: 0;
+   pointer-events: none;
+ }
+
+ #modal.hide {
+   top: 0;
+ }
+
+
+ /* Calendário */
+ .calendario {
+   margin: auto;
+   width: 380px;
+   padding: 1rem;
+   background: var(--bg-secondary);
+   border-radius: 13px;
+   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+ }
+
+ .calendario header {
+   color: var(--text-primary);
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+
+ }
+
+ .calendario ul {
+   list-style: none;
+   display: flex;
+   flex-wrap: wrap;
+   text-align: center;
+
+ }
+
+ .calendario  li {
+   width: calc(100% / 7);
+   margin-top: 25px;
+   position: relative;
+   z-index: 2;
+ }
+
+ #anterior,
+ #proximo {
+   width: 20px;
+   height: 20px;
+   position: relative;
+   top: 50%;
+   border: none;
+   background: transparent;
+   cursor: pointer;
+   margin: auto;
+ }
+
+ #anterior::before,
+ #proximo::before {
+   content: '';
+   width: 50%;
+   height: 50%;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   border-style: solid;
+   border-width: 0.25em 0.25em 0 0;
+   border-color: var(--text-primary);
+
+
+ }
+
+ #anterior::before {
+   transform: translate(-50%, -50%) rotate(-135deg);
+
+ }
+
+ #proximo::before {
+   transform: translate(-50%, -50%) rotate(45deg);
+
+ }
+
+ #anterior:hover::before,
+ #proximo:hover::before {
+   border-color: var(--special);
+   transition: 0.3s;
+
+ }
+
+ .dias {
+   font-weight: 600;
+   color: var(--text-primary);
+
+ }
+
+ .datas li {
+   color: var(--text-secondary);
+ }
+
+
+ .datas li.today {
+   color: var(--text-primary);
+
+
+ }
+
+ .datas li.today::before {
+   content: '';
+   width: 2rem;
+   height: 2rem;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   background: var(--special);
+   border-radius: 50%;
+   z-index: -1;
+
+ }
+
+ .datas li.inactive {
+   color: var(--text-tertiary);
+
+ }
+
+ #searchForm {
+   text-align: center;
+ }
+
+ #btn-pesquisar {
+   border-radius: 1rem;
+   margin-top: 2rem;
+   margin-left: auto;
+   margin-right: auto;
+   height: 3rem;
+   width: 9rem;
+   font-family: 'Poppins';
+   background-color: var(--bg-secondary);
+   color: var(--text-secondary);
+   border-color: var(--text-secondary);
+   text-align: center;
+ }
+
+ #btn-pesquisar:hover {
+   background-color: var(--special);
+   transition: 0.7s;
+   border-color: var(--special);
+
+ }
+
+
+
+
+
+ /* Segundo modal */
+ #new-modal {
+   background-color: #007bff;
+ }
+
+
+ #new-fade {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.6);
+   z-index: 5;
+ }
+
+ #new-modal {
+   position: fixed;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   width: 500px;
+   max-width: 90%;
+   background-color: var(--bg-primary);
+   padding: 1.2rem;
+   border-radius: 0.5rem;
+   z-index: 10;
+ }
+
+ #new-fade,
+ #new-modal {
+   transition: 0.5s;
+   opacity: 1;
+   pointer-events: all;
+ }
+
+ #new-modal .modal-header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   border-bottom: 1px solid var(--text-primary);
+   margin-bottom: 1rem;
+   padding-bottom: 1rem;
+ }
+
+ #new-modal .modal-header i {
+   font-size: 1.5rem;
+   color: var(--text-primary);
+ }
+
+ #new-modal .modal-header i:hover {
+   color: var(--special);
+ }
+
+ #new-modal .modal-body p {
+   margin-bottom: 1rem;
+   color: var(--text-primary);
+ }
+
+ #new-modal.hide,
+ #new-fade.hide {
+   opacity: 0;
+   pointer-events: none;
+ }
+
+ #new-modal.hide {
+   top: 0;
+ }
+
+
+ /* Inputs do segundo modal */
+
+ #new-modal h2, h3, h4, h5{
+  color: var(--text-primary);
+ }
+ #new-modal #task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bg-secondary);
+  padding: 0.3rem;
+  border-radius: 2rem;
+  margin-bottom: 2rem;
+  border: none;
+}
+
+#new-modal #task input {
+  background-color: var(--bg-secondary);
+  border: none;
+  width: 100%;
+  color: var(--text-primary);
+  padding: 0 0.5rem;
+  font-size: 1.5rem;
+}
+
+#new-modal #task::placeholder {
+  font-size: 1rem;
+  color: var(--special);
+}
+
+#new-modal #task input::-webkit-inner-spin-button,
+#new-modal #task input::-webkit-outer-spin-button {
+  appearance: none;
+}
+
+#new-modal #task input:focus {
+  outline: none;
+}
+
+
+
+#categoria{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  padding: 0.3rem;
+  border-radius: 2rem;
+  margin-bottom: 2rem;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+}
+
+#selectedDate{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  padding: 0.3rem;
+  border-radius: 2rem;
+  margin-bottom: 2rem;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+
+}
+
+
+#selectedDate selectedDate{
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+#Horas{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  padding: 0.3rem;
+  border-radius: 2rem;
+  margin-bottom: 2rem;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+}
+
+
+#notes {
+  height: 8rem;
+  width: 14rem;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  padding: 0.3rem;
+  border-radius: 0.4rem;
+  margin-bottom: 2rem;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+  overflow-wrap: break-word; /* Quebra as palavras quando necessário */
+  text-align: left; /* Alinha o texto no canto superior esquerdo */
+  display: inline-block; /* Para garantir que a altura e largura funcionem corretamente */
+  vertical-align: top; /* Alinha a div ao topo */
+  white-space: pre-wrap; /* Para quebrar as linhas conforme necessário */
+  overflow-wrap: break-word; /* Para quebrar as palavras quando necessário */
+  text-align: left; /* Alinha o texto no canto superior esquerdo */
+}
+
+
+.modal-buttons input{
+  width: 6rem;
+  height: 2rem;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: none;
+  border-radius: 1rem;
+  box-shadow:  2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+}
+
+.modal-buttons input:hover{
+  background-color: var(--special);
+  color: white;
+  transition: 0.7s;
+}
+
+
+
+
+
+
+
+ /* Inputs fora do segundo modal */
+ .input-field {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background-color: var(--bg-secondary);
+   padding: 0.3rem;
+   border-radius: 2rem;
+   margin-bottom: 2rem;
+   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+ }
+
+
+
+
+
+ .input-box {
+   max-height: 4rem;
+ }
+
+ .input-box label {
+   color: var(--text-secondary);
+   font-weight: 500;
+
+
+ }
+
+ .input-field span,
+ .input-field i {
+   color: var(--text-primary);
+   font-size: 1.3rem;
+   padding: 0.6 1rem;
+   margin-right: 5px;
+
+ }
+
+ .input-field input {
+   background-color: var(--bg-secondary);
+   border: none;
+   width: 100%;
+   color: var(--text-primary);
+   padding: 0 0.5rem;
+   font-size: 1.5rem;
+ }
+
+ .input-field input ::placeholder {
+   font-size: 0.8rem;
+   color: var(--special);
+
+ }
+
+ .input-field i:hover {
+   color: var(--special);
+   transition: 0.3s;
+ }
+
+ .input-field input::-webkit-inner-spin-button,
+ .input-field input::-webkit-outer-spin-button {
+   appearance: none;
+
+ }
+
+ .input-field input:focus {
+   outline: none;
+
+ }
+
+
+ /* Não se confunda, essas divs aqui em baixo são as tasks já feitas que precisarão ser importadas */
+
+ #task-space {
+   margin-top: 2.4rem;
+   display: flex;
+   flex-direction: column;
+   margin-bottom: auto;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ }
+ 
+
+ .input-task {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background-color: var(--bg-secondary);
+   padding: 0.3rem;
+   border-radius: 2rem;
+   margin-top: 3px;
+   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+   width: 466px;
+
+ }
+
+ .input-task span,
+ .input-task i {
+   color: var(--text-primary);
+   font-size: 1.2rem;
+   padding: 0.6 1rem;
+   margin-right: 3px;
+
+ }
+
+ .input-task input {
+   background-color: var(--bg-secondary);
+   border: none;
+   width: 100%;
+   color: var(--text-primary);
+   padding: 0 0.5rem;
+   font-size: 1.5rem;
+ }
+
+ .input-task input ::placeholder {
+   font-size: 0.8rem;
+   color: var(--special);
+
+ }
+
+ .input-task i:hover {
+   color: var(--special);
+   transition: 0.3s;
+ }
+
+ .input-task input::-webkit-inner-spin-button,
+ .input-task input::-webkit-outer-spin-button {
+   appearance: none;
+
+ }
+
+ .input-task input:focus {
+   outline: none;
+
+ }
+
+
+ /* Adicionar novas tasks */
+#Lista {
+  list-style: none;
+
+}
+
+#Lista li{
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  
+  padding: 2rem;
+  margin: 1rem;
+  border-radius: 5rem;
+  width: 600px;
+  
+}
+ #task-space .fa-circle-plus {
+   font-size: 2.5rem;
+   margin-top: 1.5rem;
+   align-items: center;
+   color: var(--text-primary)
+ }
+
+ #task-space .fa-circle-plus:hover {
+   color: var(--special);
+   transition: 0.5s;
+
+
+ }
+
+
+
+ /* Small screens */
+ @media screen and (max-width: 500px) {
+   #container {
+     width: 100%;
+     height: 100%;
+
+   }
+
+   #buttons{
+    max-width: 100%;
+   }
+
+   #search{
+    font-size: 1rem;
+   }
+
+   #taskspace{
+    height: 80%;
+   }
+
+   #taskspace .fa-circle-plus{
+    color: var(--special);
+   }
+   #task{
+    font-size: 1rem;  
+   }
+   .button{
+    height: 63px;
+    width: 112px;
+    margin: 1rem;
+    
+   }
+
+   .input-task{
+    max-width: 360px;
+   }
+
+   .button label{
+    display: none;
+
+   }
+
+   .navbar {
+     bottom: 0;
+     width: 100vw;
+     height: 5rem;
+   }
+
+   .logo {
+     display: none;
+   }
+
+   .navbar-nav {
+     flex-direction: row;
+   }
+
+   .navbar-nav i {
+     margin: 0;
+   }
+
+   .nav-link {
+     justify-content: center;
+   }
+
+   main {
+     margin: 0;
+   }
+
+
+   .calendario {
+    margin: auto;
+    width: 20rem;
+    padding: 1rem;
+    background: var(--bg-secondary);
+    border-radius: 13px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  }
+
+ }
+
+
+ /* Cofigurações de tela */
+ /* Large screens */
+
+
+
+ /* @media only screen and (max-width: 900px){
+  .navbar{
+    width: 100%;
+    margin: auto;
+  }
+
+  #container{
+    width: 100%;
+  } }*/
+
+
+ @media only screen and (min-width: 600px) {
+   .navbar {
+     top: 0;
+     width: 5rem;
+     height: 100vh;
+   }
+
+   .navbar:hover {
+     width: 16rem;
+   }
+
+   .navbar:hover .link-text {
+     display: inline;
+   }
+
+   .navbar:hover .logo svg {
+     margin-left: 11rem;
+   }
+
+   .navbar:hover .logo-text {
+     left: 0px;
+   }
+ }
+
+ .dark {
+   --text-primary: #b6b6b6;
+   --text-secondary: #ececec;
+   --bg-primary: #23232e;
+   --bg-secondary: #141418;
+   --bg-third: #23232e;
+   --special: #49DBC1;
+ }
+
+ .light {
+   --text-primary: #1f1f1f;
+   --text-secondary: #000000;
+   --text-tertiary: #d0cdd3;
+   --bg-primary: #ffffff;
+   --bg-secondary: #e4e4e4;
+   --bg-third: #ffffff;
+   --special: #49DBC1;
+ }
