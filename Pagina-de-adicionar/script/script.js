@@ -55,35 +55,6 @@ closeNewModalButton.addEventListener("click", toggleNewModal);
 
 
 
-//Editar tarefa (página)
-const editIcon = document.querySelector('.input-task i.fa-pencil');
-const taskInput = document.getElementById('task');
-
-
-editIcon.addEventListener('click', function() {
-  taskInput.removeAttribute('readonly');
-  taskInput.focus();
-});
-taskInput.addEventListener('keypress', function(event) {
-  if (event.key === 'Enter') {
-    const newTask = taskInput.value;
-    taskInput.value = newTask;
-    taskInput.setAttribute('readonly', true);
-  }
-});
-
-
-
-
-//"Apagar a tarefa" (página)
-const closeIcon = document.querySelector('.input-task i.fa-circle-xmark');
-const taskField = document.querySelector('.input-task');
-closeIcon.addEventListener('click', function() {
-  taskField.style.display = 'none';
-});
-
-
-
 //Calendário Funcional
 const datas = document.querySelector('.datas');
 const header = document.querySelector('.calendario h3');
@@ -177,8 +148,12 @@ eventos.forEach(evento => {
   const li = document.createElement("li");
   
   // Definindo o texto do li com base nas propriedades do objeto
-  li.textContent = '${evento.name} - ${evento.date}';
+  li.textContent = `${evento.name} - ${evento.date}`;
+
   
   // Adicionando o li à ul
   ul.appendChild(li);
 });
+
+//<i class="fa-solid fa-pencil"></i>
+//<i class="fa-solid fa-circle-xmark"></i>
