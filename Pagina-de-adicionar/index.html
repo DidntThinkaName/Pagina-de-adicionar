@@ -1,0 +1,215 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tentativa</title>
+  <script defer src="js/script.js"></script>
+
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/modals.css">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/media.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <ul class="navbar-nav">
+      <li class="logo">
+        <a href="#" class="nav-link">
+          <span class="link-text logo-text">Projeto X</span>
+
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="fa-solid fa-location-dot"></i>
+          <span class="link-text">Consultar</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="fa-solid fa-person-running"></i>
+          <span class="link-text">Exercícios</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="fa-regular fa-file"></i>
+          <span class="link-text">Tarefas</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="fa-solid fa-calculator"></i>
+          <span class="link-text">Calculadora IMC</span>
+        </a>
+      </li>
+
+      <li class="nav-item" id="themeButton">
+        <a href="#" class="nav-link">
+          <i class="fa-solid fa-circle-half-stroke"></i>
+          <span class="link-text">Temas</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+
+  <main id="container">
+    <h1>Suas tarefas</h1>
+
+
+    <div id="selection">
+      <div class="input-box">
+        <div class="input-field">
+          <i class="fa-solid fa-calendar-days open-modal-button"></i> <!-- Movido o ícone de calendário aqui -->
+          <input type="text" id="search" step="0.01" name="search" autocomplete="off" plarequired
+            placeholder="Digite uma tarefa aqui">
+          <span></span>
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+
+        <div id="fade" class="hide"></div>
+        <div id="modal" class="hide">
+          <div class="modal-header">
+            <h2 style="color: #49DBC1">Calendário</h2>
+            <i class="fa-solid fa-circle-xmark"></i>
+          </div>
+          <div class="modal-body">
+            <div class="calendario">
+              <header>
+                <h3></h3>
+                <nav>
+                  <button id="anterior"></button>
+                  <button id="proximo"></button>
+                </nav>
+              </header>
+
+              <section>
+                <ul class="dias">
+                  <li>Dom</li>
+                  <li>Seg</li>
+                  <li>Ter</li>
+                  <li>Quar</li>
+                  <li>Quin</li>
+                  <li>Sex</li>
+                  <li>Sab</li>
+                </ul>
+                <ul class="datas"></ul>
+              </section>
+            </div>
+
+            <form id="searchForm" action="/search" method="POST">
+              <button type="submit" id="btn-pesquisar">Pesquisar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="buttons">
+      <div class="button">
+        <i class="fa-solid fa-list-check"></i>
+        <label for="button-label">Tarefas</label>
+      </div>
+      <div class="button">
+        <i class="fa-solid fa-dumbbell"></i>
+        <label for="button-label">Treino</label>
+      </div>
+      <div class="button">
+        <i class="fa-solid fa-gamepad"></i>
+        <label for="button-label">Lazer</label>
+      </div>
+      <div class="button">
+        <i class="fa-solid fa-apple-whole"></i>
+        <label for="button-label">Dieta</label>
+      </div>
+    </div>
+
+
+
+    </div>
+
+
+
+
+    <div id="task-space">
+      <ul id="Lista"></ul>
+
+      <i class="fa-solid fa-circle-plus" id="openNewModalButton"></i>
+
+      <div id="new-fade" class="hide">
+      </div>
+      <div id="new-modal" class="hide">
+        <div class="modal-header">
+          <h2 style="color: #49DBC1">Adicionar nova tarefa</h2>
+          <i class="fa-solid fa-circle-xmark"></i>
+        </div>
+        <div class="modal-body">
+          <!-- Conteúdo do novo modal aqui -->
+          <div class="new-task">
+            <h3>Adicionar nova tarefa</h3>
+            <input type="text" id="task" step="0.01" name="task" placeholder="Sua tarefa">
+          </div>
+
+
+          <div class="task-category">
+            <h3>Selecione a categoria</h3>
+            <form method="post" action="opcao-de-categorias">
+              <select name="categoria" id="categoria">
+                <option value="selecionar">Selecione uma opção</option>
+                <option value="Trabalho">Trabalho</option>
+                <option value="Lazer">Lazer</option>
+                <option value="Exerciícios">Exercícios</option>
+                <option value="Dieta">Dieta</option>
+              </select>
+
+
+
+            </form>
+          </div>
+
+
+          <div class="task-date">
+            <h3>Data da tarefa</h3>
+            <input type="date" id="selectedDate" name="selectedDate">
+            <input type="time" name="horas" id="horas">
+          </div>
+
+          <div class="task-notifications">
+            <h5>Ativar notificações?</h5>
+            <input type="checkbox" id="checkbox">
+            <i class="fa-solid fa-bell"></i>
+          </div>
+
+
+          <div class="task-notes">
+            <h5>Anotaçoes extras</h5>
+            <input type="text" id="notes">
+          </div>
+
+          <div class="modal-buttons">
+            <input type="submit" value="Enviar" />
+            <input type="reset" value="Cancelar" />
+          </div>
+
+
+
+
+
+
+        </div>
+      </div>
+
+    </div>
+
+    <div id="task-block">
+
+    </div>
+  </main>
+  <script src="script/script.js"></script>
+</body>
